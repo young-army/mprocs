@@ -28,8 +28,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1 style="font-family:Khand">
-            <?php echo $big_header;?>
-            <small style="font-family:Khand"><?php echo $small_header;?></small>
+            <?php //echo $big_header;?>
+            <small style="font-family:Khand"><?php //echo $small_header;?></small>
           </h1>
           <!--ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
