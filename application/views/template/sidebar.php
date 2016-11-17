@@ -7,7 +7,7 @@
               <img src="<?php echo base_url();?>assets/images/lippo.png" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <h4 style="font-family:Khand">Lippo Procurement</h4>
+              <h4 style="font-family:Khand">PT Lippo Malls</h4>
 
               <!--a href="#"><i class="fa fa-circle text-success"></i> Online</a-->
             </div>
@@ -40,10 +40,6 @@
 			   <li class="">
               <a href="<?php echo base_url();?>book/stationery">
                 <i class="fa fa-rocket"></i> <span>Stationery</span> 
-              </a></li>
-			   <li class="">
-              <a href="<?php echo base_url();?>pr">
-                <i class="fa fa-file-text-o"></i> <span>Purchase Requisition</span> 
               </a></li>
 			 <?php if($this->session->userdata('sess_login')->level==1){?>
 			<li class="treeview">
