@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Book Management</title>
+    <title>Lippo e-Procurement</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 	<?php 
 	if($this->uri->segment(1)=='book'){

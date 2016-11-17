@@ -6,7 +6,7 @@
 	  <link href="https://fonts.googleapis.com/css?family=Khand|News+Cycle:700" rel="stylesheet"> 
       <header class="main-header" style="">
         <!-- Logo -->
-        <a href="index2.html" class="logo" style="font-family:Khand;background:#DD4B39">Book Management</a>
+        <a href="index2.html" class="logo" style="font-family:Khand;background:#DD4B39">e-Procurement Lippo</a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation" style="background:#DD4B39">
           <!-- Sidebar toggle button-->
