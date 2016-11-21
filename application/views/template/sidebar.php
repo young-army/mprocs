@@ -29,40 +29,20 @@
               <a href="<?php echo base_url();?>">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> 
               </a></li>
-			 <li class="">
-              <a href="<?php echo base_url();?>book/meeting_room">
-                <i class="fa fa-building-o"></i> <span>Meeting Room</span> 
+			  <li>
+			  <a href="<?php echo base_url();?>pr">
+                <i class="fa fa-file-text-o"></i> <span>Purchase Requisition</span> 
               </a></li>
-			  <li class="">
-              <a href="<?php echo base_url();?>book/operational_car">
-                <i class="fa fa-truck"></i> <span>Operational Car</span> 
-              </a></li>
-			   <li class="">
-              <a href="<?php echo base_url();?>book/stationery">
-                <i class="fa fa-rocket"></i> <span>Stationery</span> 
-              </a></li>
-			 <?php if($this->session->userdata('sess_login')->level==1){?>
-			<li class="treeview">
-              <a href="#">
-                <i class="fa fa-check-square-o"></i>
-                <span>Reservation & Approval</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo base_url();?>appres/operational_car"><i class="fa fa-circle-o"></i> Operational Car</a></li>
-                <li><a href="<?php echo base_url();?>appres/stationery"><i class="fa fa-circle-o"></i> Stationery</a></li>
-              </ul>
-            </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-folder"></i>
-                <span>Master Data</span>
+                <i class="fa fa-user"></i>
+                <span>Vendor Management</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?php echo base_url();?>master_data/meeting_room"><i class="fa fa-circle-o"></i> Meeting Room</a></li>
-                <li><a href="<?php echo base_url();?>master_data/operational_car"><i class="fa fa-circle-o"></i> Operational Car</a></li>
-                <li><a href="<?php echo base_url();?>master_data/stationery"><i class="fa fa-circle-o"></i> Stationery</a></li>
+                <li><a href="<?php echo base_url();?>vendor/registration"><i class="fa fa-circle-o"></i> Vendor Registration</a></li>
+				<li><a href="<?php echo base_url();?>vendor/verification"><i class="fa fa-circle-o"></i> Vendor Verification</a></li>
+                <li><a href="<?php echo base_url();?>vendor/lists"><i class="fa fa-circle-o"></i> Vendor List</a></li>  
               </ul>
             </li>
 			<li class="treeview">
@@ -76,7 +56,6 @@
                 <li><a href="<?php echo base_url();?>acl/menu"><i class="fa fa-circle-o"></i> ACL Menu</a></li>
               </ul>
             </li>
-			 <?php } ?>
           </ul>
         </section>
         <!-- /.sidebar -->

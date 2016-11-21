@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit ('No direct script access allowed');
 
-class Pr extends MX_Controller {
+class Registration extends MX_Controller {
 	
 	public function __construct() {
 		parent::__construct();
@@ -11,9 +11,9 @@ class Pr extends MX_Controller {
 	}
 	
 	public function index(){
-		$data['big_header']   	= 'Purchase Requisition';
-		$data['small_header']   = 'List';
-		$this->page->view('pr_index',$data);	
+		$data['big_header']   	= 'Vendor Management';
+		$data['small_header']   = 'Registration';
+		$this->page->view('vendor_form',$data);	
 	}    
 	
 	function save(){
@@ -30,12 +30,6 @@ class Pr extends MX_Controller {
 			$this->db->update('meeting_room',$data);
 		}
 
-	}
-	
-	function create(){
-		$data['big_header']   	= 'Purchase Requisition';
-		$data['small_header']   = 'Form';
-		$this->page->view('pr_form',$data);
 	}
 	
 	function delete($id){

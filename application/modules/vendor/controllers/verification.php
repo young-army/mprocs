@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit ('No direct script access allowed');
 
-class Pr extends MX_Controller {
+class Verification extends MX_Controller {
 	
 	public function __construct() {
 		parent::__construct();
@@ -11,48 +11,41 @@ class Pr extends MX_Controller {
 	}
 	
 	public function index(){
-		$data['big_header']   	= 'Purchase Requisition';
-		$data['small_header']   = 'List';
-		$this->page->view('pr_index',$data);	
+		$data['big_header']   	= 'Master Data';
+		$data['small_header']   = 'Stationery';
+		$data['data']			= $this->db->query("select * from stationery")->result();
+		$this->page->view('stationery_index',$data);	
 	}    
 	
 	function save(){
 		$data = array(
-		'room_code'		=> $this->input->post('room_code'),
-		'room_name'		=> $this->input->post('room_name'),
-		'floor'			=> $this->input->post('floor'),
-		'capacity'		=> $this->input->post('capacity')
+		'item_code'			=> $this->input->post('item_code'),
+		'item_name'			=> $this->input->post('item_name'),
+		'unit'				=> $this->input->post('unit')
 		);
 		if($this->input->post('id')==''){
-			$this->db->insert('meeting_room',$data);
+			$this->db->insert('stationery',$data);
 		}else{
 			$this->db->where('id',$this->input->post('id'));
-			$this->db->update('meeting_room',$data);
+			$this->db->update('stationery',$data);
 		}
 
 	}
 	
-	function create(){
-		$data['big_header']   	= 'Purchase Requisition';
-		$data['small_header']   = 'Form';
-		$this->page->view('pr_form',$data);
-	}
-	
 	function delete($id){
 		$this->db->where('id',$id);
-		$this->db->delete('meeting_room');
+		$this->db->delete('stationery');
 	}
 	
 	function getData(){
-		$q = $this->db->query("select * from meeting_room")->result();
+		$q = $this->db->query("select * from stationery")->result();
 		$no   = 1;
 		foreach($q as $row){
 		$data[] = array(
 		$no,
-		$row->room_code,
-		$row->room_name,
-		$row->floor,
-		$row->capacity.' Persons',
+		$row->item_code,
+		$row->item_name,
+		$row->unit,
 		'<button class="btn btn-primary btn-xs" onclick="edit(\''.$row->id.'\')"><i class="fa fa-edit"></i></button>
 		<button class="btn btn-danger btn-xs" onclick="del(\''.$row->id.'\')"><i class="fa fa-trash"></i></button>'
 		);
@@ -64,7 +57,7 @@ class Pr extends MX_Controller {
 	
 	function getDetail($id){
 		$this->db->where('id',$id);
-		$data = $this->db->get('meeting_room')->row();
+		$data = $this->db->get('stationery')->row();
 		echo json_encode($data);
 	}
 }
