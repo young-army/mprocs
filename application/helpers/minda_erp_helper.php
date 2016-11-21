@@ -157,6 +157,7 @@ function tgl_sql($date){
 	return $date;
 }
 
+
 function code_asset_general(){
 	$CI 	=& get_instance();
 	
@@ -194,6 +195,92 @@ function kode_auto_esg(){
 	return $kode;
 }
 
+/**KODE EPROC */
+function kode_company(){
+	$CI 	=& get_instance();
+	
+	$query = "
+		SELECT 
+		MAX(company_code) AS kode 
+		FROM company
+	";
+	$row = $CI->db->query($query)->row_array();
+	$id = $row['kode'];
+	$max_id = substr($id, 2,2);
+	$plus = $max_id+1;
+	if($plus<10){
+		$kode = "CP0".$plus;
+	}
+	else{
+		$kode = "CP".$plus;
+	}	
+	
+	return $kode;
+}
+function kode_registration_vendor(){
+	$CI 	=& get_instance();
+	
+	$query = "
+		SELECT 
+		MAX(register_num) AS kode 
+		FROM vendor
+	";
+	$row = $CI->db->query($query)->row_array();
+	$id = $row['kode'];
+	$max_id = substr($id, 2,6);
+	$plus = $max_id+1;
+	if($plus<10){
+		$kode = "RE00000".$plus;
+	}
+	else{
+		$kode = "RE".$plus;
+	}	
+	
+	return $kode;
+}
+function kode_vendor(){
+	$CI 	=& get_instance();
+	
+	$query = "
+		SELECT 
+		MAX(vendor_code) AS kode 
+		FROM vendor
+	";
+	$row = $CI->db->query($query)->row_array();
+	$id = $row['kode'];
+	$max_id = substr($id, 2,6);
+	$plus = $max_id+1;
+	if($plus<10){
+		$kode = "VE00000".$plus;
+	}
+	else{
+		$kode = "VE".$plus;
+	}	
+	
+	return $kode;
+}
+function kode_department(){
+	$CI 	=& get_instance();
+	
+	$query = "
+		SELECT 
+		MAX(department_code) AS kode 
+		FROM department
+	";
+	$row = $CI->db->query($query)->row_array();
+	$id = $row['kode'];
+	$max_id = substr($id, 2,2);
+	$plus = $max_id+1;
+	if($plus<10){
+		$kode = "DP0".$plus;
+	}
+	else{
+		$kode = "DP".$plus;
+	}	
+	
+	return $kode;
+}
+/* Kode Eproc */
 function kode_auto_benefit(){
 	$CI 	=& get_instance();
 	
