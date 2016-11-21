@@ -1,244 +1,96 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit ('No direct script access allowed');
 
-class Company extends CI_Controller {
-
+class Company extends MX_Controller {
+	
 	public function __construct() {
 		parent::__construct();
-		
-		date_default_timezone_set('Asia/Jakarta');
+		if(!$this->session->userdata('sess_login')){
+			redirect('login');
+		}
 		$this->page->use_directory();
-		$this->load->model('model_company');
 	}
 	
-	public function index() {		
-		
-		$this->page->view('company_form', array (
-			'add'		=> $this->page->base_url('/add'),
-			'delete'	=> $this->page->base_url('/multi_delete'),
-			'grid'		=> $this->model_company->get_company(),
-		));
-	}
+	public function index(){
+		$data['big_header']   	= 'Master Data';
+		$data['small_header']   = 'Company';
+		$data['data']			= $this->db->query("
+			SELECT c.*,
+					u.id,
+					u.username
+			FROM (
+				SELECT *
+				FROM company 
+			) AS c
+			LEFT JOIN user_login AS u
+				ON c.id_users_fk = u.id
+				")->result();
+		$this->page->view('company_form',$data);	
+	}    
 	
-	private function form($action = 'insert', $id = 0){
-		if ($this->agent->referrer() == '') redirect($this->page->base_url());
-		
-		$title = '';
-		if($this->uri->segment(3) == 'add'){ 
-			$title = 'Add';
-			$button = 'Save Data';
-		} else {
-			$title = 'Edit';
-			$button = 'Update Data';
-		}
-		
-		$this->page->view('company_form', array (
-			'ttl'		=> $title,
-			'btn'		=> $button,
-			'back'		=> $this->agent->referrer(),
-			'act'		=> $this->page->base_url("/{$action}/{$id}"),
-			'rc'		=> $this->model_company->by_id_company($id),
-			'cal'		=> $this->model_company->get_data('calendar_header'),
-		));
-	}
-	
-	public function add(){
-		$this->form();
-	}
-	
-	public function edit($id){
-		$this->form('update', $id);
-	}
-	
-	public function insert(){		
-		if ( ! $this->input->post()) show_404();
-		
-		//$calender_code = preg_replace('/\s+/', ' ',ucwords($this->input->post('calender_code')));
-		$calender_code = $this->input->post('calender_code');
-		//$position_name = ucwords($this->input->post('position_name'));
-		$company_code    = $this->input->post('company_code');
-
-	/*	$row_data 	= $this->db->get_where('company', array('calender_code'=> $calender_code, 'flag' => '1'))->row();
-		if ($row_data) {
-			$this->session->set_flashdata('duplicate', 'failed');
-			redirect($this->page->base_url('/add'));
-		}
-		else{*/
+	function save(){
 		$data = array(
-			'company_code'	=> $this->input->post('company_code'),
-			'company_name'	=> $this->input->post('company_name'),
-			'country' 		=> $this->input->post('country'),
-			'calender_code'	=> $this->input->post('calender_code'),
-			//'currency' 	=> $this->input->post('currency'),
-			//'language' 	=> $this->input->post('language'),
-			'chrt_acc' 		=> $this->input->post('chrt_acc'),
-			'tax_number' 	=> $this->input->post('tax_number'),
-			'street' 		=> $this->input->post('street'),
-			'house_number' 	=> $this->input->post('house_number'),
-			'postal_code' 	=> $this->input->post('postal_code'),
-			'city' 			=> $this->input->post('city'),
-			'telephone' 	=> $this->input->post('telephone'),
-			'fax' 			=> $this->input->post('fax'),
-			'email' 		=> $this->input->post('email'),
-			'change_date' 	=> date('Y-m-d'),
-			'change_time'	=> date('H:i:s'),
-			'id_users_fk'	=> $this->session->userdata('users')->id_users,
-			'flag'			=> '1',
+		'company_code'			=> $this->input->post('company_code'),
+		'company_name'			=> $this->input->post('company_name'),
+		'street'				=> $this->input->post('street'),
+		'postal_code'			=> $this->input->post('postal_code'),
+		'city'					=> $this->input->post('city'),
+		'telephone'				=> $this->input->post('telephone'),
+		'fax'					=> $this->input->post('fax'),
+		'email'					=> $this->input->post('email'),
+		'id_users_fk'			=> '1',
+		'flag'					=>$this->input->post('flag'),
+		'create_date'			=> date('Y-m-d')
 		);
-		//var_dump($data);exit;
-		$this->db->insert('company', $data);
-		redirect($this->page->base_url());
-		//var_dump($data);exit;
-	/*}*/
-	}
-	
-	public function update($id){		
-		if ( ! $this->input->post()) show_404();
-		
-		$data = array(
-			'company_code'	=> $this->input->post('company_code'),
-			'company_name'	=> $this->input->post('company_name'),
-			'calender_code'	=> $this->input->post('calender_code'),
-			'country' 		=> $this->input->post('country'),
-			//'currency' 	=> $this->input->post('currency'),
-			//'language' 	=> $this->input->post('language'),
-			'chrt_acc' 		=> $this->input->post('chrt_acc'),
-			'tax_number' 	=> $this->input->post('tax_number'),
-			'street' 		=> $this->input->post('street'),
-			'house_number' 	=> $this->input->post('house_number'),
-			'postal_code' 	=> $this->input->post('postal_code'),
-			'city' 			=> $this->input->post('city'),
-			'telephone' 	=> $this->input->post('telephone'),
-			'fax' 			=> $this->input->post('fax'),
-			'email' 		=> $this->input->post('email'),
-			'change_date' 	=> date('Y-m-d'),
-			'change_time'	=> date('H:i:s'),
-			'id_users_fk'	=> $this->session->userdata('users')->id_users,
-			'flag'			=> '1',
-		);				
-		$this->db->where('id', $id);
-		$this->db->update('company', $data);	
-		
-		redirect($this->page->base_url());
-	}
-	
-	public function delete($id){
-		if ($this->agent->referrer() == '') show_404();
-		if ($this->agent->referrer() == '') show_404();
-		$query = $this->db->query("select company_code from company where id='$id'")->result();
-		foreach ($query as $row ) {
-			$company_fk = $row->company_code;
+		if($this->input->post('id_company')==''){
+			$this->db->insert('company',$data);
+		}else{
+			$this->db->where('id_company',$this->input->post('id_company'));
+			$this->db->update('company',$data);
 		}
-		$checkdelete_eg = $this->db->query(" select 
-			a.company_fk
-			from 
-			employee_group a
-			where 
-			a.company_fk='$company_fk' AND a.flag='1' 
-			")->result();
 
-		$checkdelete_es = $this->db->query(" select 
-			b.company_fk
-			from 
-			employee_subgroup b
-			where 
-			b.company_fk='$company_fk' AND b.flag='1' 
+	}
+	
+	function delete($id_company){
+		$this->db->where('id_company',$id_company);
+		$this->db->delete('company');
+	}
+	
+	function getData(){
+		$q = $this->db->query("
+			SELECT c.*,
+					u.id,
+					u.username
+			FROM (
+				SELECT *
+				FROM company 
+			) AS c
+			LEFT JOIN user_login AS u
+				ON c.id_users_fk = u.id
 			")->result();
-		$checkdelete_grade = $this->db->query(" select 
-			c.company_fk
-			from 
-			grade c
-			where 
-			c.company_fk='$company_fk' AND c.flag='1' 
-			")->result();
-		$checkdelete_p = $this->db->query(" select 
-			d.company_fk
-			from 
-			position d
-			where 
-			d.company_fk='$company_fk' AND d.flag='1' 
-			")->result();
-		$checkdelete_basic_benefit = $this->db->query(" select 
-			d.company_fk
-			from 
-			basic_benefit d
-			where 
-			d.company_fk='$company_fk' AND d.flag='1' 
-			")->result();
-		$checkdelete_basic_pay = $this->db->query(" select 
-			d.company_fk
-			from 
-			basic_pay d
-			where 
-			d.company_fk='$company_fk' AND d.flag='1' 
-			")->result();
-		$checkdelete_department = $this->db->query(" select 
-			d.company_fk
-			from 
-			department d
-			where 
-			d.company_fk='$company_fk' AND d.flag='1' 
-			")->result();
-		$checkdelete_eo = $this->db->query(" select 
-			d.company_fk
-			from 
-			employee_organization d
-			where 
-			d.company_fk='$company_fk' AND d.flag='1' 
-			")->result();
-		$checkdelete_leave_ess = $this->db->query(" select 
-			d.company_fk
-			from 
-			leave_ess d
-			where 
-			d.company_fk='$company_fk' AND d.flag='1' 
-			")->result();
-		$checkdelete_leave_assign = $this->db->query(" select 
-			d.company_fk
-			from 
-			leave_assign d
-			where 
-			d.company_fk='$company_fk' AND d.flag='1' 
-			")->result();
-		$checkdelete_timesheet = $this->db->query(" select 
-			d.company_fk
-			from 
-			timesheet d
-			where 
-			d.company_fk='$company_fk' AND d.flag='1' 
-			")->result();
-		$checkdelete_timesheet_ess = $this->db->query(" select 
-			d.company_fk
-			from 
-			timesheet_ess d
-			where 
-			d.company_fk='$company_fk'
-			")->result();
-
-		if ($checkdelete_eg OR $checkdelete_es OR $checkdelete_grade OR $checkdelete_p OR $checkdelete_basic_benefit OR $checkdelete_basic_pay OR $checkdelete_department OR $checkdelete_eo OR $checkdelete_leave_ess OR $checkdelete_leave_assign OR $checkdelete_timesheet OR $checkdelete_timesheet_ess) {
-			$this->session->set_flashdata('validation_master', 'failed');
-			redirect($this->page->base_url());
-		}
-		else{
-		$data = array ('flag' => '0');
-		$this->db->where('id', $id);
-		$this->db->update('company', $data);
-		
-		redirect($this->agent->referrer());
-		//echo "qqqqqqqqqqqqqqqqq";
+		$no   = 1;
+		foreach($q as $row){
+		$data[] = array(
+		$no,
+		$row->company_code,
+		$row->company_name,
+		$row->create_date,
+		$row->username,
+		'<button class="btn btn-primary btn-xs" onclick="edit(\''.$row->id_company.'\')"><i class="fa fa-edit"></i></button>
+		<button class="btn btn-danger btn-xs" onclick="del(\''.$row->id_company.'\')"><i class="fa fa-trash"></i></button>'
+		);
+		$no++; }
+		if($data){
+		echo json_encode($data);
 		}
 	}
 	
-	public function options_company($id){
-		$company = $this->db->order_by('company_name', 'ASC')->get_where('company', array('flag' => '1'));
-		return options($company, 'company_code', $id, 'company_name');
-	}
-	public function options_calender_company($id){
-		$company = $this->db->where('flag','1')->get('company');
-		return options($company, 'id', $id, 'company_name' );
+	function getDetail($id_company){
+		$this->db->where('id_company',$id_company);
+		$data = $this->db->get('company')->row();
+		echo json_encode($data);
 	}
 
 }
 
-/* End of file company.php */
-/* Location: ./application/modules/master_data/controllers/company.php */
+/* End of file create_customer.php */
+/* Location: ./application/modules/sales/controllers/create_customer.php */
