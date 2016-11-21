@@ -1,10 +1,11 @@
 <!-- Small boxes (Stat box) -->
+<div style="margin:50px auto;width:90%">
           <div class="row">
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-aqua">
                 <div class="inner">
-                  <h3>150</h3>
+                  <h3></h3>
                   <p>New Orders</p>
                 </div>
                 <div class="icon">
@@ -54,3 +55,4 @@
             </div><!-- ./col -->
           </div><!-- /.row -->
           <!-- Main row -->
+</div>

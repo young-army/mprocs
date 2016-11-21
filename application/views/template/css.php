@@ -21,7 +21,7 @@
 	<link href="<?php echo base_url();?>assets/plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet"/>
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="<?php echo base_url();?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
-	<?php if($this->uri->segment(1)=='master_data' or $this->uri->segment(1)=='detail' or $this->uri->segment(1)=='appres'){?>
+	<?php if($datatable==true){?>
 	<link href="<?php echo base_url();?>assets/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
 	<?php } ?>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

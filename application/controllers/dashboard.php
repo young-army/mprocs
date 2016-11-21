@@ -13,7 +13,7 @@ class Dashboard extends MX_Controller{
 		$data['big_header']   	= 'Dashboard Monitoring';
 		$data['small_header']   = 'Booking Status';
 		$data['header']			= 'template/header';
-		$data['menu']			= 'template/sidebar';
+		$data['menu']			= 'template/sidebar_dashboard';
 		$data['content']		= 'template/dashboard';
 		$this->load->view('template/template',$data);
 	}

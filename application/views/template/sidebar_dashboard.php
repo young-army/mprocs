@@ -47,6 +47,18 @@
             </li>
 			<li class="treeview">
               <a href="#">
+                <i class="fa fa-user"></i>
+                <span>Master Data</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="<?php echo base_url();?>vendor/registration"><i class="fa fa-circle-o"></i> Company</a></li>
+				<li><a href="<?php echo base_url();?>vendor/verification"><i class="fa fa-circle-o"></i> Department</a></li>
+                <li><a href="<?php echo base_url();?>vendor/lists"><i class="fa fa-circle-o"></i> Material Master</a></li>  
+              </ul>
+            </li>
+			<li class="treeview">
+              <a href="#">
                 <i class="fa fa-gears"></i>
                 <span>Setting</span>
                 <i class="fa fa-angle-left pull-right"></i>

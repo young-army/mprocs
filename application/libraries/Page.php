@@ -38,7 +38,11 @@ class MY_Page {
 		}
 		
 		$this->_base_url = $this->_dir ? site_url($first.'/'.$second) : site_url($first);
-		$this->_menu = 'template/sidebar';
+		if($this->_CI->uri->segment(2)=='' or $this->_CI->uri->segment(2)=='dashboard'){
+		$this->_menu = 'template/sidebar_'.$this->_CI->uri->segment(1);
+		}else{
+		$this->_menu = 'template/sidebar_'.$this->_CI->uri->segment(1);
+		}
 		$this->_header = 'template/header';
 		
 		// others
