@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'postgres';
-$db['default']['password'] = '123456';
-$db['default']['database'] = 'mprocs';
+$db['default']['hostname'] = 'mindaperdana001.cxkonmw5c0rm.ap-southeast-1.rds.amazonaws.com';
+$db['default']['username'] = 'developminda002';
+$db['default']['password'] = 'okthats1t_003';
+$db['default']['database'] = 'm_proc';
 $db['default']['dbdriver'] = 'postgre';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
