@@ -39,11 +39,11 @@
 
     <!-- AdminLTE for demo purposes -->
     <!--script src="<?php echo base_url();?>assets/dist/js/demo.js" type="text/javascript"></script-->
-	<?php if($datatable == true){?>
+	<?php if(!empty($datatable)){?>
 	<script src="<?php echo base_url();?>assets/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
     <script src="<?php echo base_url();?>assets/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
 	<?php } ?>
-	<?php if($form == true){?>
+	<?php if(!empty($form)){?>
 	<script type="text/javascript">
       $(function () {
         $('.datepicker').datepicker({format:'yyyy-mm-dd'});
