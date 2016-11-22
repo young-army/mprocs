@@ -217,6 +217,29 @@ function kode_company(){
 	
 	return $kode;
 }
+
+function kode_material(){
+	$CI 	=& get_instance();
+	
+	$query = "
+		SELECT 
+		MAX(code_material) AS kode 
+		FROM material
+	";
+	$row = $CI->db->query($query)->row_array();
+	$id = $row['kode'];
+	$max_id = substr($id, 2,2);
+	$plus = $max_id+1;
+	if($plus<10){
+		$kode = "M00".$plus;
+	}
+	else{
+		$kode = "M".$plus;
+	}	
+	
+	return $kode;
+}
+
 function kode_registration_vendor(){
 	$CI 	=& get_instance();
 	

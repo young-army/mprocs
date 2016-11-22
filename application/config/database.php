@@ -62,6 +62,7 @@ $db['default']['char_set'] = 'utf8';
 $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
+<<<<<<< HEAD
 $db['default']['stricton'] = FALSE;
 */
 $db['default']['hostname'] = 'mindaperdana001.cxkonmw5c0rm.ap-southeast-1.rds.amazonaws.com';
@@ -79,7 +80,27 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+=======
+$db['default']['stricton'] = FALSE;*/
 
+>>>>>>> d3fb81858ac2ffa97f992ae4d6591b1694d51fa7
+
+
+$db['default']['hostname'] = 'mindaperdana001.cxkonmw5c0rm.ap-southeast-1.rds.amazonaws.com';
+$db['default']['username'] = 'developminda002';
+$db['default']['password'] = 'okthats1t_003';
+$db['default']['database'] = 'm_proc';
+$db['default']['dbdriver'] = 'postgre';
+$db['default']['dbprefix'] = '';
+$db['default']['pconnect'] = TRUE;
+$db['default']['db_debug'] = TRUE;
+$db['default']['cache_on'] = FALSE;
+$db['default']['cachedir'] = '';
+$db['default']['char_set'] = 'utf8';
+$db['default']['dbcollat'] = 'utf8_general_ci';
+$db['default']['swap_pre'] = '';
+$db['default']['autoinit'] = TRUE;
+$db['default']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
