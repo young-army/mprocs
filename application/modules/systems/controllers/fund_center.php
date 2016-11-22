@@ -22,7 +22,8 @@ class Fund_center extends MX_Controller {
 	
 	public function form(){
 		$data['big_header']   	= 'Fund Center';
-		$data['small_header']   = 'Management';
+		$data['small_header']   = 'Form';
+		$data['form']			= true;
 		$data['company']		= $this->db->query("select * from company")->result();
 		$this->page->view('fund_center_form',$data);	
 	}    
@@ -82,6 +83,16 @@ class Fund_center extends MX_Controller {
 		$this->db->where('id',$id);
 		$data = $this->db->get('fund_center')->row();
 		echo json_encode($data);
+	}
+	
+	function getCostCenter($com){
+		$data  = '<option></option>';
+		$q = $this->db->query("select * from cost_center where company_code = '".$com."'");
+		var_dump($q);exit;
+		foreach($q->result() as $row){
+			$data.='<option value="'.$row->cost_center.'">'.$row->cose_center.'-'.$row->description.'</option>';
+		}
+		echo $data;
 	}
 }
 
