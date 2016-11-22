@@ -57,7 +57,7 @@
               </ul>
       </li>
 			 <li>
-        <a href="<?php echo base_url();?>pr">
+        <a href="<?php echo base_url();?>vendor_management/catalogue">
                 <i class="fa fa-gears"></i> <span>Catalogue</span> 
               </a>
       </li>
