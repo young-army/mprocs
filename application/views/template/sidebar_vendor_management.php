@@ -30,15 +30,15 @@
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> 
               </a></li>
            <li>
-        <a href="<?php echo base_url();?>vendor/vendor">
+        <a href="<?php echo base_url();?>vendor_management/vendor">
                 <i class="fa fa-gears"></i> <span>Registration</span> 
               </a>
       </li>
-			<li>
-			  <a href="<?php echo base_url();?>#">
+		<!-- 	<li>
+			  <a href="<?php echo base_url();?>vendor_management/">
                 <i class="fa fa-gears"></i> <span>Approval</span> 
               </a>
-      </li>
+      </li> -->
       <li>
         <a href="<?php echo base_url();?>pr">
                 <i class="fa fa-gears"></i> <span>List Vendor</span> 
@@ -51,8 +51,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?php echo base_url();?>vendor/vendor_redlist"><i class="fa fa-circle-o"></i> Redlist Vendor</a></li>
-                <li><a href="<?php echo base_url();?>vendor/vendor_blacklist"><i class="fa fa-circle-o"></i> Blacklist Vendor</a></li>
+                <li><a href="<?php echo base_url();?>vendor_management/vendor_redlist"><i class="fa fa-circle-o"></i> Redlist Vendor</a></li>
+                <li><a href="<?php echo base_url();?>vendor_management/vendor_blacklist"><i class="fa fa-circle-o"></i> Blacklist Vendor</a></li>
                
               </ul>
       </li>
@@ -84,7 +84,7 @@
               </ul>
             </li-->
 			<li>
-			  <a href="<?php echo base_url();?>systems/cost_center">
+			  <a href="<?php echo base_url();?>vendor_management/#">
                 <i class="fa fa-money"></i> <span>Vendor Performance</span> 
               </a></li>
 
