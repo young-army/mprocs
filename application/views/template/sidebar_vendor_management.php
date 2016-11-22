@@ -35,7 +35,7 @@
               </a>
       </li>
 			<li>
-			  <a href="<?php echo base_url();?>pr">
+			  <a href="<?php echo base_url();?>#">
                 <i class="fa fa-gears"></i> <span>Approval</span> 
               </a>
       </li>
@@ -51,8 +51,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?php echo base_url();?>vendor/registration"><i class="fa fa-circle-o"></i> Redlist Vendor</a></li>
-                <li><a href="<?php echo base_url();?>vendor/verification"><i class="fa fa-circle-o"></i> Blacklist Vendor</a></li>
+                <li><a href="<?php echo base_url();?>vendor/vendor_redlist"><i class="fa fa-circle-o"></i> Redlist Vendor</a></li>
+                <li><a href="<?php echo base_url();?>vendor/vendor_blacklist"><i class="fa fa-circle-o"></i> Blacklist Vendor</a></li>
                
               </ul>
       </li>
