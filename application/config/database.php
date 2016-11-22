@@ -62,10 +62,8 @@ $db['default']['char_set'] = 'utf8';
 $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
-<<<<<<< HEAD
 $db['default']['stricton'] = FALSE;
 */
-
 $db['default']['hostname'] = 'mindaperdana001.cxkonmw5c0rm.ap-southeast-1.rds.amazonaws.com';
 $db['default']['username'] = 'developminda002';
 $db['default']['password'] = 'okthats1t_003';

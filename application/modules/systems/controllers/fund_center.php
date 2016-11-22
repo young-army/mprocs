@@ -25,6 +25,7 @@ class Fund_center extends MX_Controller {
 		$data['small_header']   = 'Form';
 		$data['form']			= true;
 		$data['company']		= $this->db->query("select * from company")->result();
+		$data['currency']		= $this->db->query("select * from currency")->result();
 		$this->page->view('fund_center_form',$data);	
 	}    
 	
@@ -86,11 +87,21 @@ class Fund_center extends MX_Controller {
 	}
 	
 	function getCostCenter($com){
-		$data  = '<option></option>';
+		$data  = '<option value="">-- Select Cost Center --</option>';
+		$this->db->where('company_code',$com);
 		$q = $this->db->query("select * from cost_center where company_code = '".$com."'");
-		var_dump($q);exit;
 		foreach($q->result() as $row){
-			$data.='<option value="'.$row->cost_center.'">'.$row->cose_center.'-'.$row->description.'</option>';
+			$data.='<option value="'.$row->cost_center.'-'.$row->description.'">'.$row->cost_center.' - '.$row->description.'</option>';
+		}
+		echo $data;
+	}
+	
+	function getFundCenter($com){
+		$data  = '<option value="">-- Select Header --</option>';
+		$this->db->where('company_code',$com);
+		$q = $this->db->query("select * from fund_center where company_code = '".$com."'");
+		foreach($q->result() as $row){
+			$data.='<option value="'.$row->fund_center.'">'.$row->fund_center.' - '.$row->description.'</option>';
 		}
 		echo $data;
 	}

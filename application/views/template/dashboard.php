@@ -5,13 +5,13 @@
               <!-- small box -->
               <div class="small-box bg-aqua">
                 <div class="inner">
-                  <h3></h3>
-                  <p>New Orders</p>
                 </div>
                 <div class="icon">
+				<h3> </h3>
+				<p> </p>
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="#" class="small-box-footer"><h4>System Admin</h4></a>
               </div>
             </div><!-- ./col -->
             <div class="col-lg-3 col-xs-6">

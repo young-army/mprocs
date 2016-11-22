@@ -107,7 +107,7 @@ function edit(id){
                       <label for="exampleInputEmail1">Company</label>
                       <input type="hidden" class="form-control form-input" id="id" name="id">
                       <select class="form-control form-input" name="company" id="company">
-						<option></option>
+						<option value="">-- Select Company --</option>
 						<?php foreach($company as $row){?>
 							<option value="<?php echo $row->company_code;?>"><?php echo $row->company_name;?></option>
 						<?php } ?>
