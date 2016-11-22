@@ -18,12 +18,12 @@ class Login extends MX_Controller{
 		if($q->num_rows()>0){
 			$this->session->set_userdata('sess_login',$q->row());
 			$sess = $this->session->userdata('sess_login');
-			$check = $this->db->query("select distinct(trx_number) as trxnum from stationery_cart where status = 0 and userid = '".$sess->id."'");
-			if($check->num_rows()>0){
-				$this->session->set_userdata('trxnum',$check->row()->trxnum);
-			}else{
-				$this->session->set_userdata('trxnum',date('hYimsd'));
-			}
+			//$check = $this->db->query("select distinct(trx_number) as trxnum from stationery_cart where status = 0 and userid = '".$sess->id."'");
+			//if($check->num_rows()>0){
+				//$this->session->set_userdata('trxnum',$check->row()->trxnum);
+			//}else{
+				//$this->session->set_userdata('trxnum',date('hYimsd'));
+			//}
 			redirect('dashboard');
 		}else{
 			echo "<script>
