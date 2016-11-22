@@ -15,7 +15,7 @@ public $vendor_name = '';
 	
 	public function index(){
 
-		$data['big_header'] = 'Data';
+		$data['big_header'] = 'Dashboard';
 		$data['small_header'] = 'Vendor Management';
 
 		$this->page->view('vendor_management_index', $data);	
