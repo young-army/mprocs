@@ -29,34 +29,38 @@
               <a href="<?php echo base_url();?>">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> 
               </a></li>
-           <li class="treeview">
+           <li>
+        <a href="<?php echo base_url();?>vendor_management/vendor">
+                <i class="fa fa-gears"></i> <span>Registration</span> 
+              </a>
+      </li>
+		<!-- 	<li>
+			  <a href="<?php echo base_url();?>vendor_management/">
+                <i class="fa fa-gears"></i> <span>Approval</span> 
+              </a>
+      </li> -->
+      <li>
+        <a href="<?php echo base_url();?>pr">
+                <i class="fa fa-gears"></i> <span>List Vendor</span> 
+              </a>
+      </li>
+     <li class="treeview">
               <a href="#">
-                <i class="fa fa-user"></i>
-                <span>Master Data</span>
+                <i class="fa fa-folder"></i>
+                <span>Red / Black List</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?php echo base_url();?>systems/company"><i class="fa fa-circle-o"></i> Company</a></li>
-        <li><a href="<?php echo base_url();?>systems/department"><i class="fa fa-circle-o"></i> Department</a></li>
-                <li><a href="<?php echo base_url();?>systems/material"><i class="fa fa-circle-o"></i> Material Master</a></li>  
+                <li><a href="<?php echo base_url();?>vendor_management/vendor_redlist"><i class="fa fa-circle-o"></i> Redlist Vendor</a></li>
+                <li><a href="<?php echo base_url();?>vendor_management/vendor_blacklist"><i class="fa fa-circle-o"></i> Blacklist Vendor</a></li>
+               
               </ul>
-            </li>
-			<li>
-			  <a href="<?php echo base_url();?>pr">
-                <i class="fa fa-gears"></i> <span>Roles</span> 
-              </a></li>
-			<li class="treeview">
-              <a href="#">
-                <i class="fa fa-user"></i>
-                <span>User List</span>
-                <i class="fa fa-angle-left pull-right"></i>
+      </li>
+			 <li>
+        <a href="<?php echo base_url();?>vendor_management/catalogue">
+                <i class="fa fa-gears"></i> <span>Catalogue</span> 
               </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo base_url();?>#"><i class="fa fa-circle-o"></i> menu 1</a></li>
-				        <li><a href="<?php echo base_url();?>#"><i class="fa fa-circle-o"></i> menu 2</a></li>
-                <li><a href="<?php echo base_url();?>#"><i class="fa fa-circle-o"></i> menu 3</a></li>  
-              </ul>
-            </li>
+      </li>
 			<!--li class="treeview">
               <a href="#">
                 <i class="fa fa-money"></i>
@@ -80,13 +84,10 @@
               </ul>
             </li-->
 			<li>
-			  <a href="<?php echo base_url();?>systems/cost_center">
-                <i class="fa fa-money"></i> <span>Cost Center</span> 
+			  <a href="<?php echo base_url();?>vendor_management/#">
+                <i class="fa fa-money"></i> <span>Vendor Performance</span> 
               </a></li>
-			  <li>
-			  <a href="<?php echo base_url();?>systems/fund_center">
-                <i class="fa fa-money"></i> <span>Fund Center</span> 
-              </a></li>
+
           </ul>
         </section>
         <!-- /.sidebar -->

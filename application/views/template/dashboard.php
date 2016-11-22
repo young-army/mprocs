@@ -1,10 +1,12 @@
 <!-- Small boxes (Stat box) -->
 <div style="margin:50px auto;width:90%">
           <div class="row">
-            <div class="col-lg-3 col-xs-6">
+           
+            <div class="col-lg-4 col-xs-4">
               <!-- small box -->
-              <div class="small-box bg-aqua">
+              <div class="small-box bg-green">
                 <div class="inner">
+<<<<<<< HEAD
                 </div>
                 <div class="icon">
 				<h3> </h3>
@@ -12,45 +14,75 @@
                   <i class="ion ion-bag"></i>
                 </div>
                 <a href="#" class="small-box-footer"><h4>System Admin</h4></a>
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-green">
-                <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
-                  <p>Bounce Rate</p>
+=======
+                 
+                  <p><h3 align="center">Systems</h3></p>
                 </div>
-                <div class="icon">
+                <!-- <div class="icon">
                   <i class="ion ion-stats-bars"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div> -->
+                <a href="<?php echo base_url();?>systems" class="small-box-footer">System Admin <i class="fa fa-arrow-circle-right"></i></a>
+>>>>>>> f8d73d635766834f2c1714a5f7a703a9f7a20297
               </div>
             </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-yellow">
-                <div class="inner">
-                  <h3>44</h3>
-                  <p>User Registrations</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-person-add"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
+            <div class="col-lg-4 col-xs-4">
               <!-- small box -->
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3>65</h3>
-                  <p>Unique Visitors</p>
+                  <p><h3 align="center">Vendor Mgn</h3></p>
                 </div>
-                <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
+                <!-- <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div> -->
+                <a href="<?php echo base_url();?>vendor_management" class="small-box-footer">Vendor Management <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-4 col-xs-4">
+              <!-- small box -->
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                <p><h3 align="center">Sourcing</h3></p>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <!-- <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div> -->
+                <a href="<?php echo base_url();?>sourcing" class="small-box-footer">Sourcing <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+             <div class="col-lg-4 col-xs-4">
+              <!-- small box -->
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                <p><h3 align="center">Contract</h3></p>
+                </div>
+                <!-- <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div> -->
+                <a href="<?php echo base_url();?>contract" class="small-box-footer">Contract <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-4 col-xs-4">
+              <!-- small box -->
+              <div class="small-box bg-green">
+                <div class="inner">
+               <p><h3 align="center">Procurement</h3></p>
+                </div>
+                <!-- <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div> -->
+                <a href="<?php echo base_url();?>procurement" class="small-box-footer">Procurement <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-4 col-xs-4">
+              <!-- small box -->
+              <div class="small-box bg-blue">
+                <div class="inner">
+               <p><h3 align="center">Report</h3></p>
+                </div>
+                <!-- <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div> -->
+                <a href="<?php echo base_url();?>report" class="small-box-footer">Report <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
           </div><!-- /.row -->
