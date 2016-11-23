@@ -102,13 +102,13 @@ function edit(id_vendor_blacklist){
             <td><?php $status_vendor = $row->status_blacklist; ?>
             <?php 
              $status_vendor = $row->status_blacklist;
-             if($status_vendor == 'Waiting                       '){?>
+             if($status_vendor == 'Waiting'){?>
             <span style="background-color: red; color: white; padding:5px; border-radius: 3px;"><?php echo $status_vendor; ?></span>
-            <?php } else if ($status_vendor == 'Approved                      ') { ?>
+            <?php } else if ($status_vendor == 'Approved') { ?>
             <span style="background-color: green; color: white; padding:5px; border-radius: 3px;"><?php echo $status_vendor; ?></span>
-            <?php } else if ($status_vendor == 'Cancel                        ') { ?>
+            <?php } else if ($status_vendor == 'Cancel') { ?>
              <span style="background-color: blue; color: white; padding:5px; border-radius: 3px;"><?php echo $status_vendor; ?></span>
-            <?php } else if ($status_vendor == 'Rejected                      ') { ?>
+            <?php } else if ($status_vendor == 'Rejected') { ?>
              <span style="background-color: black; color: white; padding:5px; border-radius: 3px;"><?php echo $status_vendor; ?></span>
             <?php }else{
               echo ' ';

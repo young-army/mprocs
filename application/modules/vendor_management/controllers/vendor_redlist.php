@@ -39,7 +39,7 @@ class Vendor_redlist extends MX_Controller {
 	
 	function save(){
 		
-		$vendor_fk = $this->input->post('vendor_fk');
+	/*	$vendor_fk = $this->input->post('vendor_fk');
 		$query_redlist = $this->db->query("select * from vendor_redlist where vendor_fk = 'VE000002            '")->result();
 			//$query_blacklist = $this->db->query("select * from vendor_blacklist where vendor_fk = '$vendor_fk'")->result();
 			if ($query_redlist) {
@@ -48,7 +48,7 @@ class Vendor_redlist extends MX_Controller {
 			document.location.href='".base_url()."vendor_redlist';
 			</script>";
 			//redirect('vendor/vendor_blacklist');
-			}
+			}*/
 			
 
 		$data = array(

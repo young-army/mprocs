@@ -106,7 +106,7 @@ function edit(id_vendor_redlist){
             <button class="btn btn-primary btn-xs" onclick="edit('<?php echo $row->id_vendor_redlist;?>')"><i class="fa fa-edit"></i></button>
               <?php 
              $status_vendor = $row->status_redlist;
-             if($status_vendor == 'Waiting                       '){?>
+             if($status_vendor == 'Waiting'){?>
             <a href="<?php echo base_url();?>vendor_management/vendor_redlist/approve/<?php echo $row->id_vendor_redlist;?>" onclick="return confirm('Are You Sure ?')" class="btn btn-primary btn-xs"><i class="fa fa-check"></i> Approve</a>
             <?php }else{
               echo ' ';
