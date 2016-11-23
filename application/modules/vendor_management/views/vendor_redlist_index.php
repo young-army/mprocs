@@ -11,7 +11,7 @@
 <script src="<?php echo base_url();?>assets/plugins/jQuery/jQuery-2.1.3.min.js"></script>
 <script>
 $(document).ready(function(){
-/*  var vendor_redlist = $('#vendor_redlist').dataTable({
+  var vendor_redlist = $('#vendor_redlist').dataTable({
           "bPaginate": true,
           "bLengthChange": false,
           "bFilter": false,
@@ -21,7 +21,7 @@ $(document).ready(function(){
     });
   $('#myModal').on('hidden.bs.modal', function () {
     $(this).find('#vendor_redlist_name').val('').end();
-  });*/
+  });
   $('#submit').click(function(){
     $.post('<?php echo base_url();?>vendor_management/vendor_redlist/save',$('#formData').serialize(),function(){
         //vendor_redlist.fnClearTable();

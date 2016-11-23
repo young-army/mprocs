@@ -13,6 +13,8 @@ class Registration extends MX_Controller {
 	public function index(){
 		$data['big_header']   	= 'Vendor Management';
 		$data['small_header']   = 'Registration';
+		$data['datatable']		= true;
+		$data['form']			= true;
 		$this->page->view('vendor_form',$data);	
 	}    
 	

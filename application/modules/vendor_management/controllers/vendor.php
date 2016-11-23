@@ -17,9 +17,10 @@ public $vendor_name = '';
 
 		$title = 'Data';
 		$title_d = 'Vendor';
-
+		$datatable = true;
 		$this->page->view('vendor_index', array (
 			'add'				=> $this->page->base_url('/add'),
+			'datatable'			=> $datatable,
 			'big_header'		=> $title,
 			'small_header'		=> $title_d,
 			'add'				=> $this->page->base_url('/add'),

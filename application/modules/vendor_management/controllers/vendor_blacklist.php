@@ -14,6 +14,8 @@ class Vendor_blacklist extends MX_Controller {
 	public function index(){
 		$data['big_header']   	= 'Master Data';
 		$data['small_header']   = 'Vendor Blacklist';
+		$data['datatable']		= true;
+		$data['form']			= true;
 		$data['vendor']		= $this->db->query("
 			SELECT *
 				FROM vendor 
