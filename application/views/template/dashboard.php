@@ -6,25 +6,14 @@
               <!-- small box -->
               <div class="small-box bg-green">
                 <div class="inner">
-<<<<<<< HEAD
-                </div>
-                <div class="icon">
-				<h3> </h3>
-				<p> </p>
-                  <i class="ion ion-bag"></i>
-                </div>
-                <a href="#" class="small-box-footer"><h4>System Admin</h4></a>
-=======
-                 
                   <p><h3 align="center">Systems</h3></p>
                 </div>
                 <!-- <div class="icon">
                   <i class="ion ion-stats-bars"></i>
                 </div> -->
                 <a href="<?php echo base_url();?>systems" class="small-box-footer">System Admin <i class="fa fa-arrow-circle-right"></i></a>
->>>>>>> f8d73d635766834f2c1714a5f7a703a9f7a20297
               </div>
-            </div><!-- ./col -->
+              </div>
             <div class="col-lg-4 col-xs-4">
               <!-- small box -->
               <div class="small-box bg-red">
